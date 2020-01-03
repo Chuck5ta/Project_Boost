@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Rcoket : MonoBehaviour
 {
+    Rigidbody rigidBody;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -20,6 +22,7 @@ public class Rcoket : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            rigidBody.AddRelativeForce(Vector3.up);
             print("Space pressed");
         }
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
