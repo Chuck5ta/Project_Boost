@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rcoket : MonoBehaviour
+public class Rocket : MonoBehaviour
 {
     Rigidbody rigidBody;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,12 @@ public class Rcoket : MonoBehaviour
         {
             rigidBody.AddRelativeForce(Vector3.up);
             print("Space pressed");
+            if (!audioSource.isPlaying)
+                audioSource.Play();
+        }
+        else
+        {
+            audioSource.Stop();
         }
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
         {
@@ -31,10 +39,12 @@ public class Rcoket : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.A))
         {
+            transform.Rotate(Vector3.forward);
             print("Rotate left");
         }
         else if (Input.GetKey(KeyCode.D))
         {
+            transform.Rotate(-Vector3.forward);
             print("Rotate right");
         }
     }
