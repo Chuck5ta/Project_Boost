@@ -24,12 +24,27 @@ public class Rocket : MonoBehaviour
         Rotate();
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Friendly":
+                break;
+            case "Fuel":
+                print("Fueling");
+                break;
+            default:
+                print("BOOM!");
+                break;
+
+        }
+    }
+
     private void Thrust()
     {
         if (Input.GetKey(KeyCode.Space))
         {
             rigidBody.AddRelativeForce(Vector3.up * mainThrust);
-            print("Space pressed");
             if (!audioSource.isPlaying) // so it does not layer
                 audioSource.Play();
         }
@@ -52,12 +67,10 @@ public class Rocket : MonoBehaviour
         else if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(Vector3.forward * rotationThisFrame);
-            print("Rotate left");
         }
         else if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(-Vector3.forward * rotationThisFrame);
-            print("Rotate right");
         }
         rigidBody.freezeRotation = false; // resume physics control of rotation
     }
