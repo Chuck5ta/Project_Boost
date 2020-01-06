@@ -24,6 +24,8 @@ public class Oscillator : MonoBehaviour
     void Update()
     {
         // set movement factor
+        if (period <= Mathf.Epsilon) // guard against div by zero
+            return;
         float cycles = Time.time / period; // grows continually from 0
 
         const float tau = Mathf.PI * 2f; // aboyt 6.28
