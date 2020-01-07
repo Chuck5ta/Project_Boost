@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
@@ -21,6 +22,9 @@ public class Rocket : MonoBehaviour
     enum State { Alive, Dying, Transcending }
     State state = State.Alive;
     int currentScene = 0;
+    int finalScene = 4; // 4 levels
+    bool collisionsDisabled = true;
+
 
 
     // Start is called before the first frame update
@@ -28,6 +32,8 @@ public class Rocket : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        finalScene = 4; // 4 levels
+        collisionsDisabled = false;
     }
 
     // Update is called once per frame
@@ -38,11 +44,40 @@ public class Rocket : MonoBehaviour
             RespondToThrustInput();
             RespondToRotateInput();
         }
+        if (Debug.isDebugBuild)
+        {
+            RespondToDebugKeys();
+        }
+    }
+
+    private void RespondToDebugKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (currentScene < finalScene)
+            {
+                currentScene++;
+                SceneManager.LoadScene(currentScene);
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.K))
+        {
+            if (currentScene > 0)
+            {
+                currentScene--;
+                SceneManager.LoadScene(currentScene);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            print("Collison is " + collisionsDisabled);
+            collisionsDisabled = !collisionsDisabled;
+        }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (state != State.Alive)
+        if (state != State.Alive || collisionsDisabled)
         {
             return;
         }
