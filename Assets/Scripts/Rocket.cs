@@ -54,9 +54,14 @@ public class Rocket : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            if (currentScene < finalScene)
+            if (currentScene < SceneManager.sceneCountInBuildSettings-1)
             {
                 currentScene++;
+                SceneManager.LoadScene(currentScene);
+            }
+            else
+            {
+                currentScene = 0; // when we have done the last scene
                 SceneManager.LoadScene(currentScene);
             }
         }
