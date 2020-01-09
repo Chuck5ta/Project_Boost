@@ -991,7 +991,7 @@ GameObject:
   - component: {fileID: 1881950763}
   - component: {fileID: 1881950764}
   m_Layer: 0
-  m_Name: Spot Light (1)
+  m_Name: Light illuminating player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1404,17 +1404,17 @@ PrefabInstance:
     - target: {fileID: 8839689647510031400, guid: 183fd2a5886222a4eac93d31925a5d7c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3177661
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 8839689647510031400, guid: 183fd2a5886222a4eac93d31925a5d7c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.288803
+      value: 6.57
       objectReference: {fileID: 0}
     - target: {fileID: 8839689647510031400, guid: 183fd2a5886222a4eac93d31925a5d7c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -39.427902
+      value: -51.59
       objectReference: {fileID: 0}
     - target: {fileID: 8839689647510031400, guid: 183fd2a5886222a4eac93d31925a5d7c,
         type: 3}
@@ -1455,6 +1455,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8839689647510031401, guid: 183fd2a5886222a4eac93d31925a5d7c,
+        type: 3}
+      propertyPath: field of view
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8839689647510031415, guid: 183fd2a5886222a4eac93d31925a5d7c,
         type: 3}

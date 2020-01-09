@@ -926,7 +926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementVector: {x: 0, y: -9, z: 0}
-  movementFactor: 0
+  period: 2
 --- !u!1001 &447605801909681003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -987,6 +987,11 @@ PrefabInstance:
     - target: {fileID: 447605802008170836, guid: e563c6b7a0d81e64abbb8a21c86fd0e8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447605802008170837, guid: e563c6b7a0d81e64abbb8a21c86fd0e8,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 447605802008170838, guid: e563c6b7a0d81e64abbb8a21c86fd0e8,
@@ -1159,17 +1164,17 @@ PrefabInstance:
     - target: {fileID: 8839689647510031400, guid: 183fd2a5886222a4eac93d31925a5d7c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3177661
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 8839689647510031400, guid: 183fd2a5886222a4eac93d31925a5d7c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.288803
+      value: 6.57
       objectReference: {fileID: 0}
     - target: {fileID: 8839689647510031400, guid: 183fd2a5886222a4eac93d31925a5d7c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -39.427902
+      value: -51.59
       objectReference: {fileID: 0}
     - target: {fileID: 8839689647510031400, guid: 183fd2a5886222a4eac93d31925a5d7c,
         type: 3}
@@ -1210,6 +1215,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8839689647510031401, guid: 183fd2a5886222a4eac93d31925a5d7c,
+        type: 3}
+      propertyPath: field of view
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8839689647510031415, guid: 183fd2a5886222a4eac93d31925a5d7c,
         type: 3}
